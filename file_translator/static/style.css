@@ -1,6 +1,7 @@
 body {
+    background-color: rgb(193, 238, 238);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0; /* Remove default margin */
@@ -13,13 +14,38 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 500px;
+    padding-top: 100px;
+}
+
+.name_block {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mid {
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 500px;
+    height: 150px;
+}
+
+.file_field {
+    background-color: rgb(231, 218, 159);
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .languages {
@@ -27,11 +53,19 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     width: 500px;
+    padding-top: 20px;
+
+    
 }
 
 .lang_icons {
     border: 2px solid black;
     text-align: center;
-    width: 30px;
+    width: 50px;
     height: 30px;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 150px;
 }

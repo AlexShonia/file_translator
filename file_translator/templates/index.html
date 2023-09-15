@@ -5,23 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Translator</title>
     <link rel="stylesheet" href="../static/style.css" />
+    <script src="../upload_logic.js"></script>
 </head>
 <body>
     <h1>File Translator</h1>
     <div class="names">
-        <div>Word file</div>
-        <div>Text file</div>
+        <div class="name_block">Word file</div>
+        <div class="name_block">Text file</div>
     </div>
     <div class="mid">
-        <div class="Upload"> Upload </div>
-        <div> -> </div>
-        <div class="Download"> Download </div>
+        <div class="file_field" id="drop_area">
+             Upload 
+            <div id="upload_progress"></div> 
+            <div id="speed"></div> 
+        </div>
+        <div class="arrow"> -> </div>
+        <div class="file_field"> Download </div>
     </div>
-    <!-- make these into a select button -->
     <div class="languages"> 
-        <div class="lang_icons"> ge </div>
+        <select class="lang_icons">
+            <option> en </option>
+            <option> ka </option>
+            <option> fr </option>
+        </select>
         <div> to </div>
-        <div class="lang_icons"> en </div>
+        <select class="lang_icons">
+            <option> en </option>
+            <option> ka </option>
+            <option> fr </option>
+        </select>
     </div>
+    <button> Translate! </button>
+
 </body>
 </html>
