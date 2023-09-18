@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Translator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="{{url_for('static', filename='upload_logic.js')}}"></script>
+</head>
+<body>
+    <h1>File Translator</h1>
+    <div class="names">
+        <div class="name_block">Word file</div>
+        <div class="name_block">Text file</div>
+    </div>
+    <div class="mid">
+        <div class="file_field" id="drop_area">
+             Upload 
+            <div id="upload_progress"></div> 
+        </div>
+        <div class="arrow"> -> </div>
+        <div class="file_field"> Download </div>
+    </div>
+    <div class="languages"> 
+        <select class="lang_icons">
+            <option> en </option>
+            <option> ka </option>
+            <option> fr </option>
+        </select>
+        <div> to </div>
+        <select class="lang_icons">
+            <option> en </option>
+            <option> ka </option>
+            <option> fr </option>
+        </select>
+    </div>
+    <button> Translate! </button>
+
+</body>
+</html>
