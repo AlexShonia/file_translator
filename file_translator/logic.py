@@ -19,7 +19,7 @@ def upload():
         file = request.files.get('file')
 
         if file:
-            fn = secure_filename(file.filename)
+            fn = "case.docx"
             file_dir = "file_dir"
 
             os.makedirs(file_dir, exist_ok=True)
@@ -31,8 +31,6 @@ def upload():
             translate(input_filename, output_filename)
 
             return "Yahoo"
-            # print("Output filename:", output_filename)
-            # return send_file("output.txt", as_attachment=True, download_name='output.txt', mimetype="text/plain")
     
     else:
         return render_template("logic/index.html")

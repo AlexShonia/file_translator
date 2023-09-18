@@ -54,8 +54,7 @@ body {
     justify-content: space-evenly;
     width: 500px;
     padding-top: 20px;
-
-    
+    margin-bottom: 150px;
 }
 
 .lang_icons {
@@ -65,7 +64,3 @@ body {
     height: 30px;
 }
 
-button {
-    margin-top: 20px;
-    margin-bottom: 150px;
-}
