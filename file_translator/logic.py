@@ -1,7 +1,7 @@
 # server libraries
 import os
 from flask import(
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, send_file
 )
 
 from werkzeug.utils import secure_filename
@@ -13,7 +13,7 @@ from googletrans import Translator
 
 bp = Blueprint("logic", __name__,)
 
-@bp.route('/', methods=['GET', 'POST'])
+@bp.route("/", methods=['GET', 'POST'])
 def upload():
     if request.method == "POST":
         file = request.files.get('file')
@@ -28,14 +28,19 @@ def upload():
 
             input_filename = os.path.abspath('file_dir/case.docx')
             output_filename = os.path.abspath('file_dir/output.txt')
-            # output_filename = "../file_dir/output.txt"
             translate(input_filename, output_filename)
-            # return translate("files/file.word")
+
             return "Yahoo"
+            # print("Output filename:", output_filename)
+            # return send_file("output.txt", as_attachment=True, download_name='output.txt', mimetype="text/plain")
     
     else:
         return render_template("logic/index.html")
 
+@bp.route("/download")
+def download_file():
+    p = os.path.abspath('file_dir/output.txt')
+    return(send_file(p, as_attachment=True))
 
 # not used yet
 

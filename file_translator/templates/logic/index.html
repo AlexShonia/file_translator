@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Translator</title>
     <link rel="stylesheet" href="/static/style.css" />
-    <script src="{{url_for('static', filename='upload_logic.js')}}"></script>
+    <script src="/static/upload_logic.js"></script>
 </head>
 <body>
     <h1>File Translator</h1>
@@ -19,7 +19,7 @@
             <div id="upload_progress"></div> 
         </div>
         <div class="arrow"> -> </div>
-        <div class="file_field"> Download </div>
+        <a class="file_field" href="{{ url_for('logic.download_file') }}" download> Download </a>
     </div>
     <div class="languages"> 
         <select class="lang_icons">
