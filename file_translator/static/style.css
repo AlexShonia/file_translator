@@ -9,23 +9,32 @@ body {
     flex-direction: column;
 }
 
+h1 {
+    font-size: 40px;
+    margin-bottom: 10vh;
+}
+
+.text {
+    text-align: center;
+    font-family:Verdana, Tahoma, sans-serif;
+    color: rgb(29, 44, 46);
+}
+
 .tick {
-    height: 25px;
-    width: 15px;
-    border-top: 10px solid rgb(85, 236, 105);
-    border-left: 10px solid rgb(85, 236, 105);
+    height: 35px;
+    width: 20px;
+    border-top: 10px solid rgb(0, 255, 98);
+    border-left: 10px solid rgb(0, 255, 98);
     transform: rotate(225deg);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-
 .tick-hidden {
     opacity: 0;
     visibility: hidden;
 } 
-
 
 .loader {
     width: 50px;
@@ -60,21 +69,19 @@ body {
     }
 }
 
-
-
 .names {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 500px;
-    padding-top: 10px;
+    width: 40vw;
 }
 
 .name_block {
-    width: 150px;
+    width: 15vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: x-large;
 }
 
 .mid {
@@ -83,18 +90,21 @@ body {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    width: 500px;
-    height: 150px;
+    width: 40vw;
+    height: 30vh;
 }
 
 .file_field {
     background-color: rgb(231, 218, 159);
-    height: 150px;
-    width: 150px;
+    height: 30vh;
+    width: 15vw;
+    border-radius: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: x-large;
+    border: 5px double rgb(220, 243, 243);
 }
 
 
@@ -123,7 +133,7 @@ body {
 .languages {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 500px;
     padding-top: 20px;
     margin-bottom: 150px;

@@ -4,43 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Translator</title>
-    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="../../static/style.css" />
     <script src="/static/upload_logic.js"></script>
     <script src="/static/language_picker.js"></script>
 </head>
 <body>
-    <h1>File Translator</h1>
+    <h1 class="text">File Translator</h1>
     <div class="tick"> </div>
     <div class="loader"></div>
     <div class="names">
-        <div class="name_block">Word file</div>
-        <div class="name_block">Text file</div>
+        <div class="name_block text">Word file</div>
+        <div class="name_block text">Text file</div>
     </div>
     <div class="mid">
-        <div class="file_field" id="drop_area">
+        <div class="file_field text" id="drop_area">
              Upload 
             <div id="upload_progress"></div> 
         </div>
         <div class="arrow"> <div></div> </div>
-        <a class="file_field" id="download"></a>
+        <a class="file_field text" id="download"></a>
     </div>
     <div class="languages"> 
-        <label>from</label>
-        <select class="lang_icons" id="from"  name="selected_option1">
-            <option> </option>
-            <option> en </option>
-            <option> ka </option>
-            <option> fr </option>
-            <option> ru </option>
-        </select>
-        <div> to </div>
-        <select class="lang_icons" id="to"  name="selected_option2">
-            <option> </option>
-            <option> en </option>
-            <option> ka </option>
-            <option> fr </option>
-            <option> ru </option>
-        </select>
+        <div class="from">
+            <div class="text">from</div>
+            <select class="lang_icons" id="from"  name="selected_option1">
+                <option> </option>
+                <option> en </option>
+                <option> ka </option>
+                <option> fr </option>
+                <option> ru </option>
+            </select>
+        </div>
+        
+        <div class="to">
+            <div class="text"> to </div>
+            <select class="lang_icons" id="to"  name="selected_option2">
+                <option> </option>
+                <option> en </option>
+                <option> ka </option>
+                <option> fr </option>
+                <option> ru </option>
+            </select>
+        </div>
+
     </div>
 
 
