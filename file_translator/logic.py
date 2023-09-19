@@ -26,10 +26,12 @@ def upload():
 
             file.save(os.path.join(file_dir, fn))
 
+
             input_filename = os.path.abspath('file_dir/case.docx')
             output_filename = os.path.abspath('file_dir/output.txt')
-            translate(input_filename, output_filename)
 
+            translate(input_filename, output_filename, from_lang, to_lang)
+            print(from_lang, to_lang)
             return "Yahoo"
     
     else:
@@ -40,10 +42,23 @@ def download_file():
     p = os.path.abspath('file_dir/output.txt')
     return(send_file(p, as_attachment=True))
 
-# not used yet
+@bp.route('/process_choice', methods=['POST'])
+def process_choice():
+    data = request.get_json()
+    global from_lang
+    global to_lang
+    from_lang = data.get("selected_option1")
+    to_lang = data.get("selected_option2")
+
+    
+
+    # print(from_lang, to_lang)
 
 
-def translate(input_filename, output_filename):
+    # Do something with the selected_option value
+    return f'Selected option: {data}'
+
+def translate(input_filename, output_filename, lang1, lang2):
         # Function to split text into sentences
     def split_text_into_sentences(text):
         # Use a regular expression to split text into sentences
@@ -54,7 +69,7 @@ def translate(input_filename, output_filename):
     # Function to translate text from Georgian to English
     def translate_georgian_to_english(text):
         translator = Translator()
-        translation = translator.translate(text, src='ka', dest='en')
+        translation = translator.translate(text, src=lang1, dest=lang2)
         return translation.text
 
     # Read the Word file

@@ -10,8 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var drop_area = document.getElementById('drop_area');
 var loader = document.querySelector(".loader");
-var tick = document.querySelector(".tick")
+var tick = document.querySelector(".tick");
 var download = document.getElementById("download");
+
 
 tick.classList.add("tick-hidden")
 loader.classList.add("loader-hidden");
@@ -60,11 +61,4 @@ drop_area.addEventListener('drop', function (e) {
     xhr.send(fd);
 }, false);});
 
-
-
-// loader logic 
-
-// window.addEventListener("load", () => {
-//     const loader = document.querySelector(".loader");
-// })
 
