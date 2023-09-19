@@ -10,10 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var drop_area = document.getElementById('drop_area');
 var loader = document.querySelector(".loader");
-
 var tick = document.querySelector(".tick")
-tick.classList.add("tick-hidden")
+var download = document.getElementById("download");
 
+tick.classList.add("tick-hidden")
 loader.classList.add("loader-hidden");
 
 drop_area.addEventListener('drop', function (e) {
@@ -34,6 +34,10 @@ drop_area.addEventListener('drop', function (e) {
 
             loader.classList.add("loader-hidden");
             tick.classList.remove("tick-hidden")
+            download.textContent = "Download";
+            download.setAttribute("href", "/download")
+            download.setAttribute("download", "output.txt")
+
             // alert('Successfully translated!');  // please replace with your own logic
         }
     };
