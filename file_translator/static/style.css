@@ -10,8 +10,16 @@ body {
 }
 
 .tick {
+    height: 25px;
+    width: 15px;
+    border-top: 10px solid rgb(85, 236, 105);
+    border-left: 10px solid rgb(85, 236, 105);
+    transform: rotate(225deg);
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .tick-hidden {
     opacity: 0;
@@ -59,7 +67,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     width: 500px;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 .name_block {
@@ -95,17 +103,17 @@ body {
     align-items: center;
     justify-content: center;
     background: rgb(231, 218, 159);
-    height: 70px;
-    width: 70px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 }
 
 .arrow div {
     position: absolute;
-    height: 25px;
-    width: 25px;
-    border-top: 10px solid rgb(220, 243, 243);
-    border-left: 10px solid rgb(220, 243, 243);
+    height: 15px;
+    width: 15px;
+    border-top: 8px solid rgb(220, 243, 243);
+    border-left: 8px solid rgb(220, 243, 243);
     transform: rotate(135deg);
     display: flex;
     align-items: center;
