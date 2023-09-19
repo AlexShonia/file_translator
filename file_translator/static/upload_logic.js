@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 var drop_area = document.getElementById('drop_area');
+var loader = document.querySelector(".loader");
+
+var tick = document.querySelector(".tick")
+tick.classList.add("tick-hidden")
+
+loader.classList.add("loader-hidden");
+
 drop_area.addEventListener('drop', function (e) {
     e.preventDefault();
     var file = e.dataTransfer.files[0]; // the file to be uploaded
@@ -16,13 +23,18 @@ drop_area.addEventListener('drop', function (e) {
         return false;
     }
 
+    loader.classList.remove("loader-hidden");
+
     // we use XMLHttpRequest here instead of fetch, because with the former we can easily implement progress and speed.
     var xhr = new XMLHttpRequest();
     xhr.open('post', '/', true); // aussume that the url / handles uploading.
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             // uploading is successful
-            alert('Successfully translated!');  // please replace with your own logic
+
+            loader.classList.add("loader-hidden");
+            tick.classList.remove("tick-hidden")
+            // alert('Successfully translated!');  // please replace with your own logic
         }
     };
 
@@ -43,3 +55,12 @@ drop_area.addEventListener('drop', function (e) {
     lastTime = Date.now();
     xhr.send(fd);
 }, false);});
+
+
+
+// loader logic 
+
+// window.addEventListener("load", () => {
+//     const loader = document.querySelector(".loader");
+// })
+

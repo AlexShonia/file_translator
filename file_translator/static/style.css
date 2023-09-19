@@ -9,12 +9,57 @@ body {
     flex-direction: column;
 }
 
+.tick {
+    display: flex;
+}
+
+.tick-hidden {
+    opacity: 0;
+    visibility: hidden;
+} 
+
+
+.loader {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(193, 238, 238);
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 8px solid rgb(220, 243, 243);
+    border-top-color: rgb(231, 218, 159);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+
+
 .names {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 500px;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .name_block {
