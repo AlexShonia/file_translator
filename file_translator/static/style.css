@@ -1,7 +1,7 @@
 body {
     background-color: rgb(193, 238, 238);
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
     margin: 0; /* Remove default margin */
@@ -11,7 +11,7 @@ body {
 
 h1 {
     font-size: 40px;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .text {
@@ -21,8 +21,8 @@ h1 {
 }
 
 .tick {
-    height: 35px;
-    width: 20px;
+    height: 6vh;
+    width: 3vh;
     border-top: 10px solid rgb(0, 255, 98);
     border-left: 10px solid rgb(0, 255, 98);
     transform: rotate(225deg);
@@ -37,8 +37,8 @@ h1 {
 } 
 
 .loader {
-    width: 50px;
-    height: 50px;
+    width: 8vh;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,8 +52,8 @@ h1 {
 
 .loader::after {
     content: "";
-    width: 30px;
-    height: 30px;
+    width: 5vh;
+    height: 5vh;
     border: 8px solid rgb(220, 243, 243);
     border-top-color: rgb(231, 218, 159);
     border-radius: 50%;
@@ -113,17 +113,17 @@ h1 {
     align-items: center;
     justify-content: center;
     background: rgb(231, 218, 159);
-    height: 50px;
-    width: 50px;
+    height: 7vh;
+    width: 7vh;
     border-radius: 50%;
 }
 
 .arrow div {
     position: absolute;
-    height: 15px;
-    width: 15px;
-    border-top: 8px solid rgb(220, 243, 243);
-    border-left: 8px solid rgb(220, 243, 243);
+    height: 2.5vh;
+    width: 2.5vh;
+    border-top: 1.2vh solid rgb(220, 243, 243);
+    border-left: 1.2vh solid rgb(220, 243, 243);
     transform: rotate(135deg);
     display: flex;
     align-items: center;
@@ -135,8 +135,8 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
     width: 500px;
-    padding-top: 20px;
-    margin-bottom: 150px;
+    padding-top: 5vh;
+    margin-bottom: 15vh;
 }
 
 .lang_icons {
