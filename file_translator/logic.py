@@ -30,8 +30,10 @@ def upload():
             input_filename = os.path.abspath('file_dir/case.docx')
             output_filename = os.path.abspath('file_dir/output.txt')
 
-            translate(input_filename, output_filename, to_lang)
-            print(to_lang)
+            try:
+                translate(input_filename, output_filename, to_lang)
+            except NameError:
+                print("pick translate to")    
             return "Yahoo"
     
     else:
@@ -47,6 +49,7 @@ def process_choice():
     data = request.get_json()
     global to_lang
     to_lang = data.get("selected_option")
+    print(to_lang)
 
     # Do something with the selected_option value
     return f'Selected option: {data}'

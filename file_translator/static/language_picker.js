@@ -1,3 +1,5 @@
+var to_lang;
+
 document.addEventListener('DOMContentLoaded', function () {
     
     var to = document.getElementById("to");
@@ -5,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     to.addEventListener('change', function () {
         sendSelectionToServer();
     });
-
     function sendSelectionToServer() {
-        var to_lang = to.value;
+        to_lang = to.value;
+        
 
         var xhr = new XMLHttpRequest();
         xhr.open('post', '/process_choice', true)
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     })
 
+// export { to_lang };    
     
     
     

@@ -21,7 +21,8 @@ h1 {
 }
 
 .tick {
-    height: 6vh;
+    padding-top: 5vh;
+    height: 1vh;
     width: 3vh;
     border-top: 10px solid rgb(0, 255, 98);
     border-left: 10px solid rgb(0, 255, 98);

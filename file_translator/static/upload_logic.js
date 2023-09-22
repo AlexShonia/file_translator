@@ -1,3 +1,5 @@
+// import { to_lang } from "./language_picker.js"
+
 // Wrap your code in a DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function () {
     
@@ -23,14 +25,19 @@ drop_area.addEventListener('drop', function (e) {
         return false;
     }
 
-    dropaera_text = document.getElementById("drop_area");
+    droparea_text = document.getElementById("drop_area");
+
+    if (document.getElementById("to").value == "") {
+        droparea_text.textContent = "pick language first";
+        return false
+    }
 
     if (!file["name"].includes(".docx")){
-        dropaera_text.textContent = "Not a word file!";
+        droparea_text.textContent = "Not a word file!";
         return false;
     }
     
-    dropaera_text.textContent = "Uploaded✔️";
+    droparea_text.textContent = "Uploaded✔️";
 
 
     loader.classList.remove("loader-hidden");
