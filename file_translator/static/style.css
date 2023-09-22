@@ -132,11 +132,20 @@ h1 {
 
 .languages {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 500px;
     padding-top: 5vh;
     margin-bottom: 15vh;
+    gap: 10px;
+}
+
+.languages div {
+    width: 80px;
+    text-align: center;
+    text-wrap:wrap;
+    font-size: large;
 }
 
 .lang_icons {
@@ -144,5 +153,9 @@ h1 {
     text-align: center;
     width: 50px;
     height: 30px;
+}
+
+option {
+    font-size: large;
 }
 
