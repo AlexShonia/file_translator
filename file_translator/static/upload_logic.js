@@ -13,20 +13,28 @@ var loader = document.querySelector(".loader");
 var tick = document.querySelector(".tick");
 var download = document.getElementById("download");
 
-
 tick.classList.add("tick-hidden")
 loader.classList.add("loader-hidden");
 
 drop_area.addEventListener('drop', function (e) {
     e.preventDefault();
     var file = e.dataTransfer.files[0]; // the file to be uploaded
-    if (!file) {
+    if (!file){
         return false;
     }
 
+    dropaera_text = document.getElementById("drop_area");
+
+    if (!file["name"].includes(".docx")){
+        dropaera_text.textContent = "Not a word file!";
+        return false;
+    }
+    
+    dropaera_text.textContent = "Uploaded✔️";
+
+
     loader.classList.remove("loader-hidden");
 
-    // we use XMLHttpRequest here instead of fetch, because with the former we can easily implement progress and speed.
     var xhr = new XMLHttpRequest();
     xhr.open('post', '/', true); // aussume that the url / handles uploading.
     xhr.onreadystatechange = function () {
@@ -43,21 +51,11 @@ drop_area.addEventListener('drop', function (e) {
         }
     };
 
-    // show uploading progress
-    var lastTime = Date.now();
-    xhr.upload.onprogress = function (event) {
-        if (event.lengthComputable) {
-            // update progress
-            var percent = Math.floor(event.loaded / event.total * 100);
-            document.getElementById('upload_progress').textContent = percent + '%';
-        }
-    };
 
     // send file to server
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     var fd = new FormData();
     fd.append('file', file);
-    lastTime = Date.now();
     xhr.send(fd);
 }, false);});
 

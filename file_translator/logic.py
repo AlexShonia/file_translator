@@ -48,11 +48,6 @@ def process_choice():
     global to_lang
     to_lang = data.get("selected_option")
 
-    
-
-    # print(from_lang, to_lang)
-
-
     # Do something with the selected_option value
     return f'Selected option: {data}'
 
