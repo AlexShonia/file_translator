@@ -4,7 +4,8 @@ from flask import(
     Blueprint, flash, g, redirect, render_template, request, session, url_for, send_file
 )
 
-from werkzeug.utils import secure_filename
+import time
+import threading
 
 # translating logic libraries
 import re
@@ -13,6 +14,13 @@ from googletrans import Translator
 
 bp = Blueprint("logic", __name__,)
 
+def remove_files_after_download():
+    global downloaded
+    if downloaded:
+        time.sleep(1)
+        os.remove(os.path.abspath('file_dir/case.docx'))
+        os.remove(os.path.abspath('file_dir/output.txt'))
+    
 @bp.route("/", methods=['GET', 'POST'])
 def upload():
     if request.method == "POST":
@@ -33,7 +41,9 @@ def upload():
             try:
                 translate(input_filename, output_filename, to_lang)
             except NameError:
-                print("pick translate to")    
+                print("pick translate to")
+
+
             return "Yahoo"
     
     else:
@@ -42,7 +52,15 @@ def upload():
 @bp.route("/download")
 def download_file():
     p = os.path.abspath('file_dir/output.txt')
-    return(send_file(p, as_attachment=True))
+
+    response = send_file(p, as_attachment=True)
+
+    global downloaded
+    downloaded = True
+    remove_files_thread = threading.Thread(target=remove_files_after_download)
+    remove_files_thread.start()
+
+    return response
 
 @bp.route('/process_choice', methods=['POST'])
 def process_choice():
